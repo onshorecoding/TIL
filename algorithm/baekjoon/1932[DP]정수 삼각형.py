@@ -24,23 +24,26 @@ from sys import stdin
 
 N = int(input())
 
-lst = [stdin.readline().split() for i in range(N)]
+# lst = [stdin.readline().split() for i in range(N)]
+lst = list(map(int, stdin.readline().split()))
+# dp =[[0]*N for _ in range(N)]
 
-def dp(a,b):
-    if a == 0:
-        return int(lst[0][0])
-    elif b == 0:
-        return dp(a-1,b) + int(lst[a][b])
-    elif a - b == 1:
-        return dp(a-1,b-1) + int(lst[a][b])
-    else:
-        return max(dp(a-1,b),dp(a-1,b-1)) + int(lst[a][b])
 
-ans = 0
+# def dp(a,b):
+#     if a == 0:
+#         return int(lst[0][0])
+#     elif b == 0:
+#         return dp(a-1,b) + int(lst[a][b])
+#     elif a - b == 1:
+#         return dp(a-1,b-1) + int(lst[a][b])
+#     else:
+#         return max(dp(a-1,b),dp(a-1,b-1)) + int(lst[a][b])
 
-for i in range(N-1):
-    if dp(N-1,i) > ans:
-        ans = dp(N-1,i)
+# ans = 0
 
-print(ans)
+# for i in range(N-1):
+#     if dp(N-1,i) > ans:
+#         ans = dp(N-1,i)
+
+print(lst)
 

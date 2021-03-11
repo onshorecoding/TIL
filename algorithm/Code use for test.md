@@ -47,3 +47,29 @@ print(dic)
 ```
 
 파이썬의 내장함수인 zip()은 동일한 개수로 이루어진 자료형을 묶어주는 역할을 하는 함수이다.
+
+## String into List
+```
+str = "abcde"
+lst = list(str)
+print(lst)
+-> [a,b,c,d,e]
+```
+
+## python Zip
+```
+num = [1,2,3,4]
+alpha = ['a','b','c','d']
+
+lst =  list(zip(num,alpha))
+
+print(lst)
+-> [(1,a),(2,b),(3,c),(4,d)]
+```
+
+## 리스트 중복 체크(set(list))
+```
+lst = [a,b,b]
+print(set(lst))
+->[a,b]
+```
