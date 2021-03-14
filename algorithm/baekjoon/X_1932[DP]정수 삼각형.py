@@ -19,13 +19,16 @@
 
 # f(a,b) = max(f(a-1,b-1),f(a-1,b))
 
+
+##메모이제이션이 필요한 문제인 것 같다. 아래에 수정이 필요한 상태이다.
+
 from sys import stdin
 
 
 N = int(input())
 
 # lst = [stdin.readline().split() for i in range(N)]
-lst = list(map(int, stdin.readline().split()))
+
 # dp =[[0]*N for _ in range(N)]
 
 

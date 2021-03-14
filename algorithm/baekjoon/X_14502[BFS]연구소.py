@@ -50,10 +50,16 @@
 # 출력
 # 첫째 줄에 얻을 수 있는 안전 영역의 최대 크기를 출력한다.
 
+
+
+##시간초과를 해결하지못함
+##permutation -> 재귀를 사용했고 -> 결과값을 list로 받아서 최대값을 구하는 방식에서 bfs를 돌때마다 ans를 수정하는 방식으로 수정했으나 안됨
+
 def recursion(n):
     if n == 3:
-        print( bfs())
-        
+        bfs()
+        return None
+
     for i in range(N):
         for j in range(M):
             if m[i][j] == 0:
@@ -65,32 +71,31 @@ def recursion(n):
 def bfs():
     global ans
 
-    visited = [[False]*M for i in range(N)]
     mp = copy.deepcopy(m)
-    print("working")
-
+    dq = copy.deepcopy(virus)
 
     dx = [-1,0,1,0]
     dy = [0,-1,0,1]   
 
     while dq:
-        print("working")
-        print(dq)
+        
         e = dq.popleft()
         x = e[0]
         y = e[1]
 
-        visited[x][y] = True
+        mp[x][y] = 2
 
         for i in range(4):
             new_x = x + dx[i]
             new_y = y + dy[i]
 
             if new_x >= 0 and new_x < N and new_y >= 0 and new_y < M:
-                if visited[new_x][new_y] == False and mp[new_x][new_y] == 0:
+                if  mp[new_x][new_y] == 0:
                     dq.append([new_x, new_y])
-
-    cnt = mp.count(0)
+    
+    cnt = 0
+    for i in mp:
+        cnt += i.count(0)
 
     if cnt > ans:
         ans = cnt
@@ -100,21 +105,21 @@ def bfs():
 
 from sys import stdin
 from collections import deque
-from itertools import permutations
 import copy
 
 N, M = map(int, stdin.readline().split())
 m = [list(map(int, stdin.readline().split())) for i in range(N)]
+v = [[False]*M for i in range(N)]
 
-lst = []
-dq = deque([])
+virus = deque([])
 ans = 0
 
 for i in range(N):
     for j in range(M):
         if m[i][j] == 2:
-            dq.append([i,j])
+            virus.append([i,j])
 
 recursion(0)
 
 print(ans)
+
