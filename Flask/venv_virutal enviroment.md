@@ -23,3 +23,5 @@ $ source venv/bin/activate #가상환경 실행
 $ deactivate #가상환경 종료
 ```
 
+git에 올리기 전 한번 해주는 것이 좋을 것 같다.
+
