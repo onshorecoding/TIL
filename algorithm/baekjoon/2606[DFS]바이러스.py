@@ -17,6 +17,7 @@
 def dfs(n):
     global visited
     visited[n] = True
+
     for com in link:
 
         if com[0] == n and visited[com[1]] == False:
