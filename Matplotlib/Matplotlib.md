@@ -34,3 +34,28 @@ ax.plot(
 - Line
 - Scatter
 - Bar plot
+
+
+# JSON(JavaScript Object Notation)
+
+- loads() : JSON 형태의 문자열을 딕셔너리로 변환한다. 딕셔너리의 모든 원소는 문자열로 설정된다. 
+- dumps() : 딕셔너리를 JSON 형태의 문자열로 변환한다.
+
+```
+with open(파일명) as file:
+    json_string = file.read()
+    
+    json_string json.loads(json_string)
+
+with open(filename, 'w') as file:
+    json_string = json.dumps(dictionary)
+
+    file.write(json_string)
+
+```
+
+# 집합
+- union : set1 | set2 #합집합
+- intersection :  set1 & set2 #교집합
+- diff : set1 - set2 #차집합
+- xor : set1 ^ set2 #XOR
