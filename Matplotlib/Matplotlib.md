@@ -28,6 +28,23 @@ ax.plot(
     color="#00000'  #컬러
 )
 
+font = fm.FontProperties(fname='./NanumBarunGothic.ttf')
+
+# 막대의 높이가 빈도의 값이 되도록 설정합니다.
+plt.bar(pos, temperatures, align='center')
+
+# 각 막대에 해당되는 단어를 입력합니다.
+plt.xticks(pos, dates, rotation='vertical', fontproperties=font)
+
+# 그래프의 제목을 설정합니다.
+plt.title('제목', fontproperties=font)
+
+# Y축에 설명을 추가합니다.
+plt.ylabel('Y축', fontproperties=font)
+
+# 단어가 잘리지 않도록 여백을 조정합니다.
+plt.tight_layout()
+
 ```
 
 
@@ -55,7 +72,26 @@ with open(filename, 'w') as file:
 ```
 
 # 집합
+- set(list) : 집합연산자
 - union : set1 | set2 #합집합
 - intersection :  set1 & set2 #교집합
 - diff : set1 - set2 #차집합
 - xor : set1 ^ set2 #XOR
+
+
+# CSV(Comma Separated Value)
+
+- 같은 데이터를 저당하는데 용량을 적게 소모함
+- 데이터 오염에 취약함
+
+ex) name, age, address, gender
+콤마가 아닌 다른 문자로도 구분하는 경우도 포함
+
+```
+import csv
+
+wiht open('file.csv') as file:
+    reader = csv.reader(file, delimiter=',') #구분자를 명시해야한다
+    for row in reader:
+        print(row[0])
+```

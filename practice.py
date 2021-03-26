@@ -229,3 +229,26 @@
 # 			dfs(deque([[i,j]]), 1)
 			
 # print(ans)
+
+from itertools import combinations
+
+
+def solution(number, k):
+    length = len(number)
+    answer = 0
+
+    number = list(number)
+
+    l_num  = [ i for i in range(length)]
+    l_list = list(combinations(l_num, k))
+
+    for i in l_list:
+        check = number[:]
+        for j in range(k):
+            del check[i[j] - j]
+        point = int(''.join(check))
+        if point > answer:
+            answer = point
+
+    return answer
+
