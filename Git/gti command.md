@@ -23,3 +23,6 @@ $ git checkout -b <sub branch name> <branch name> #create sub branch
 #delete branch
 $ git branch -d <branch>
 ```
+
+
+# MR: WIP(Work in Progress) / Draft
