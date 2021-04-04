@@ -5,15 +5,18 @@
 생성
 ```
 $ python3 -m venv venv #가상환경 생성
+#윈도우 
 
 $ pip freeze > requirements.txt #패키지 정보기록
 ```
 
 설치
 ```
+#1.
 $ python3 -m venv venv #가상환경 생성
 
-$ pip install -r requirements.txt #패키지 설치
+#패키지 설치
+$ pip install -r requirements.txt 
 ```
 
 실행/종료
