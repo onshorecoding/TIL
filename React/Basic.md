@@ -16,18 +16,21 @@
 # Web의 발정 과정
 
 static: html
-
-- css
-  ->WS 로 배포: server side rendering
+css ->WS 로 배포: server side rendering
 
 dynamic: JS
-
--
 
 server-client
 -> 서버 측 기능이 늘어남
 
 - pain point: load-balancing의 필요성 ws : nginx
-- 서버츨에서 더 응용프로그램처럼 할 필요 -> WAS:flaks middleware: wsgi
+- 서버츨에서 더 응용프로그램처럼 할 필요 -> WAS:flaks
+
+middleware: wsgi
+
+dynamic 느리다
+
+- 파일 자체를 파일 시스테으로 저장 s3(AWS)
+- CDN에 cashing 해서 배포 :
 
 웹서버 (WS) vs 웹어플리케이션 (WAS)
