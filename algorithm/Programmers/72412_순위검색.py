@@ -28,4 +28,7 @@ def solution(info, query):
         
         
     return info_table
+
+
+    [1, 2,3,4,5,6,7,8, 9,31,23,13,3,34,21,4]
 print(solution(["java backend junior pizza 150","python frontend senior chicken 210","python frontend senior chicken 150","cpp backend senior pizza 260","java backend junior chicken 80","python backend senior chicken 50"], ["java or backend or junior or pizza 100","python or frontend or senior or chicken 200","cpp or - or senior or pizza 250","- or backend or senior or - 150","- or - or - or chicken 100","- or - or - or - 150"]))

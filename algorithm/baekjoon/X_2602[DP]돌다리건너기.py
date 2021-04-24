@@ -21,9 +21,3 @@ for i in range(len(A)):
 
 
     dq.popleft()
-
-def dfs():
-    
-
-    
-
