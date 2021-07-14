@@ -49,4 +49,3 @@ N = int(input())
 #         ans = dp(N-1,i)
 
 print(lst)
-

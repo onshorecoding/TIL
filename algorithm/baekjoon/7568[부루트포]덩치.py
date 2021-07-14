@@ -1,6 +1,6 @@
 n = int(input())
 
-lst = [tuple(map(int,input().split())) for _ in range(n)]
+lst = [tuple(map(int, input().split())) for _ in range(n)]
 
 for i in range(n):
     rank = 1

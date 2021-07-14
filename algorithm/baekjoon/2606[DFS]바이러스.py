@@ -13,7 +13,6 @@
 # 1번 컴퓨터가 웜 바이러스에 걸렸을 때, 1번 컴퓨터를 통해 웜 바이러스에 걸리게 되는 컴퓨터의 수를 첫째 줄에 출력한다.
 
 
-
 def dfs(n):
     global visited
     visited[n] = True
@@ -24,7 +23,7 @@ def dfs(n):
             dfs(com[1])
         if com[1] == n and visited[com[0]] == False:
             dfs(com[0])
-            
+
     return
 
 
@@ -34,9 +33,8 @@ n = int(input())
 l = int(input())
 
 link = [list(map(int, stdin.readline().split())) for _ in range(l)]
-visited = [False] * (n+1)
+visited = [False] * (n + 1)
 
 dfs(1)
 
-print(visited.count(True)-1)
-
+print(visited.count(True) - 1)

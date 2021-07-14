@@ -1,7 +1,7 @@
 import sys
 
 n = int(input())
-lst = [0]*10001
+lst = [0] * 10001
 for _ in range(n):
     x = int(sys.stdin.readline())
     lst[x] += 1

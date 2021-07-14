@@ -5,6 +5,7 @@ test = [list(input()) for _ in range(N)]
 dx = [-1, 0, 1, 0]
 dy = [0, -1, 0, 1]
 
+
 def bfs():
     while dq:
         e = dq.popleft()
@@ -20,7 +21,6 @@ def bfs():
                     dq.append((new_x, new_y))
 
     return result
-
 
 
 for i in range(N):
@@ -41,5 +41,3 @@ for i in range(N):
 color_blind = bfs()
 
 print(color_blind)
-
-

@@ -11,24 +11,25 @@
 # 첫째 줄에 N이 유진수이면 YES, 아니면 NO를 출력한다.
 
 
+N = [int(i) for i in input()]
 
-N = [ int(i) for i in input()]
 
 def checknum(N):
 
-    for i in range(1,len(N)):
+    for i in range(1, len(N)):
         l = 1
         r = 1
 
         for k in N[:i]:
-            l = l*k
+            l = l * k
 
         for j in N[i:]:
-            r = r*j
+            r = r * j
 
-        if l == r :
+        if l == r:
             return True
-            
+
+
 if checknum(N):
     print("YES")
 else:

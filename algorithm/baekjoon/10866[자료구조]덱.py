@@ -70,4 +70,5 @@ def solution():
         else:
             cmd_line[cmd[0]](lst)
 
+
 solution()

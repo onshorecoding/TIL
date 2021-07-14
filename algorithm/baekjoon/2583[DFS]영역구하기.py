@@ -15,6 +15,7 @@ def dfs(x, y):
                 return cnt
     return cnt
 
+
 M, N, n = map(int, input().split())
 mp = [list(map(int, input().split())) for _ in range(n)]
 default_mp = [[0] * N for _ in range(M)]

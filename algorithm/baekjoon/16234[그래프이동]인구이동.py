@@ -2,20 +2,21 @@ import math
 import sys
 from collections import deque
 
+
 def bfs(x, y):
     global union_sum
     global union_len
     global union
     union_sum = mp[x][y]
     union_len = 1
-    union = [[x,y]]
+    union = [[x, y]]
     dq = deque()
     dq.append([x, y])
 
     while dq:
         e = dq.popleft()
         x, y = e[0], e[1]
-        
+
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
@@ -28,6 +29,7 @@ def bfs(x, y):
                     union_sum += mp[nx][ny]
                     union_len += 1
 
+
 N, L, P = map(int, input().split())
 mp = [list(map(int, input().split())) for _ in range(N)]
 dx = [0, 1, 0, -1]
@@ -35,7 +37,7 @@ dy = [-1, 0, 1, 0]
 ans = 0
 
 while True:
-    print("before:",mp)
+    print("before:", mp)
 
     change = False
     union_set = []
@@ -43,9 +45,9 @@ while True:
 
     for i in range(N):
         for j in range(N):
-            if visited[i][j] == False:      
+            if visited[i][j] == False:
                 bfs(i, j)
-    print("after:",mp)
+    print("after:", mp)
     if not change:
         break
     else:
@@ -89,7 +91,7 @@ print(ans)
 #                     s += graph[nx][ny]
 #     for a, b in union:
 #         graph[a][b] = s // len(union)
-                
+
 # while True:
 #     visited = [[False] * N for _ in range(N)]
 #     check = False

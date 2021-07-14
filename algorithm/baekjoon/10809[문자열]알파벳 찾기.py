@@ -3,7 +3,7 @@ import string
 S = input()
 ans = [-1] * 26
 
-#alphabet
+# alphabet
 # [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
 alphabet = list(string.ascii_lowercase)
 
@@ -18,4 +18,4 @@ for i in ans:
     print(i, end=" ")
 
 
-ord(string) 
+ord(string)

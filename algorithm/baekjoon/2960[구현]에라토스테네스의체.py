@@ -14,19 +14,20 @@ from sys import stdin
 
 N, K = map(int, stdin.readline().split())
 
-lst = [False] * (N+1)
+lst = [False] * (N + 1)
+
 
 def check():
     cnt = 0
 
-
-    for i in range(2, N+1):
-        for j in range(2, N+1):
+    for i in range(2, N + 1):
+        for j in range(2, N + 1):
             if j % i == 0 and lst[j] == False:
                 lst[j] = True
                 cnt += 1
-                
+
                 if cnt == K:
-                    return(j)
-                
+                    return j
+
+
 print(check())

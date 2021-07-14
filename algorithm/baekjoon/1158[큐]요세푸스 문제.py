@@ -16,17 +16,17 @@ from collections import deque
 
 N, K = map(int, input().split())
 
-dq = deque([i for i in range(1, N+1)])
+dq = deque([i for i in range(1, N + 1)])
 ans = []
 
 while dq:
-    for i in range(K-1):
+    for i in range(K - 1):
         e = dq.popleft()
         dq.append(e)
     e = dq.popleft()
     ans.append(e)
 
 print("<", end="")
-for i in range(N-1):
+for i in range(N - 1):
     print(ans[i], end=", ")
 print(ans[-1], end=">")

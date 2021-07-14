@@ -24,10 +24,11 @@
 # N개의 수와 연산자가 주어졌을 때, 만들 수 있는 식의 결과가 최대인 것과 최소인 것을 구하는 프로그램을 작성하시오.
 
 # 입력
-# 첫째 줄에 수의 개수 N(2 ≤ N ≤ 11)가 주어진다. 둘째 줄에는 A1, A2, ..., AN이 주어진다. (1 ≤ Ai ≤ 100) 셋째 줄에는 합이 N-1보다 크거나 같고, 4N보다 작거나 같은 4개의 정수가 주어지는데, 차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 
+# 첫째 줄에 수의 개수 N(2 ≤ N ≤ 11)가 주어진다. 둘째 줄에는 A1, A2, ..., AN이 주어진다. (1 ≤ Ai ≤ 100) 셋째 줄에는 합이 N-1보다 크거나 같고, 4N보다 작거나 같은 4개의 정수가 주어지는데, 차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다.
 
 # 출력
 # 첫째 줄에 만들 수 있는 식의 결과의 최댓값을, 둘째 줄에는 최솟값을 출력한다. 연산자를 어떻게 끼워넣어도 항상 -10억보다 크거나 같고, 10억보다 작거나 같은 결과가 나오는 입력만 주어진다. 또한, 앞에서부터 계산했을 때, 중간에 계산되는 식의 결과도 항상 -10억보다 크거나 같고, 10억보다 작거나 같다.
+
 
 def dfs(ans, cnt):
     global max_ans
@@ -37,33 +38,34 @@ def dfs(ans, cnt):
     if cnt == N:
         max_ans = max(max_ans, ans)
         min_ans = min(min_ans, ans)
-        return 
+        return
 
     if n[0] > 0:
         n[0] -= 1
-        dfs(ans+s[cnt], cnt+1)
+        dfs(ans + s[cnt], cnt + 1)
         n[0] += 1
 
     if n[1] > 0:
         n[1] -= 1
-        dfs(ans-s[cnt], cnt+1)
+        dfs(ans - s[cnt], cnt + 1)
         n[1] += 1
 
     if n[2] > 0:
         n[2] -= 1
-        dfs(ans*s[cnt], cnt+1)
+        dfs(ans * s[cnt], cnt + 1)
         n[2] += 1
 
     if n[3] > 0:
         n[3] -= 1
         if ans < 0:
             ans = abs(ans)
-            dfs(ans//s[cnt]*(-1), cnt+1)
+            dfs(ans // s[cnt] * (-1), cnt + 1)
         else:
-            dfs(ans//s[cnt], cnt+1)
+            dfs(ans // s[cnt], cnt + 1)
         n[3] += 1
 
     return
+
 
 N = int(input())
 s = list(map(int, input().split()))

@@ -11,10 +11,10 @@
 #         e = dq. popleft()
 #         if e == T:
 #             return 1
-        
+
 #         if len(e) >= l:
 #             continue
-        
+
 #         dq.appendleft(e+'A')
 #         dq.append(e[::-1]+'B')
 
@@ -22,21 +22,23 @@
 
 # print(solution())
 
+
 def solution():
-    S = input() 
+    S = input()
     T = input()
-    
+
     while T:
-        if T[-1] == 'A':
+        if T[-1] == "A":
             T = T[:-1]
         else:
             T = T[:-1]
             T = T[::-1]
-        
+
         if T == S:
             return 1
-        
+
         elif len(T) == len(S):
-            return 0 
+            return 0
+
 
 print(solution())

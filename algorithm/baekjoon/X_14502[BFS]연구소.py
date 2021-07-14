@@ -3,7 +3,7 @@
 # 문제
 # 인체에 치명적인 바이러스를 연구하던 연구소에서 바이러스가 유출되었다. 다행히 바이러스는 아직 퍼지지 않았고, 바이러스의 확산을 막기 위해서 연구소에 벽을 세우려고 한다.
 
-# 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 연구소는 빈 칸, 벽으로 이루어져 있으며, 벽은 칸 하나를 가득 차지한다. 
+# 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 연구소는 빈 칸, 벽으로 이루어져 있으며, 벽은 칸 하나를 가득 차지한다.
 
 # 일부 칸은 바이러스가 존재하며, 이 바이러스는 상하좌우로 인접한 빈 칸으로 모두 퍼져나갈 수 있다. 새로 세울 수 있는 벽의 개수는 3개이며, 꼭 3개를 세워야 한다.
 
@@ -51,9 +51,9 @@
 # 첫째 줄에 얻을 수 있는 안전 영역의 최대 크기를 출력한다.
 
 
-
 ##시간초과를 해결하지못함
 ##permutation -> 재귀를 사용했고 -> 결과값을 list로 받아서 최대값을 구하는 방식에서 bfs를 돌때마다 ans를 수정하는 방식으로 수정했으나 안됨
+
 
 def recursion(n):
     if n == 3:
@@ -64,7 +64,7 @@ def recursion(n):
         for j in range(M):
             if m[i][j] == 0:
                 m[i][j] = 1
-                recursion(n+1)
+                recursion(n + 1)
                 m[i][j] = 0
 
 
@@ -74,11 +74,11 @@ def bfs():
     mp = copy.deepcopy(m)
     dq = copy.deepcopy(virus)
 
-    dx = [-1,0,1,0]
-    dy = [0,-1,0,1]   
+    dx = [-1, 0, 1, 0]
+    dy = [0, -1, 0, 1]
 
     while dq:
-        
+
         e = dq.popleft()
         x = e[0]
         y = e[1]
@@ -90,9 +90,9 @@ def bfs():
             new_y = y + dy[i]
 
             if new_x >= 0 and new_x < N and new_y >= 0 and new_y < M:
-                if  mp[new_x][new_y] == 0:
+                if mp[new_x][new_y] == 0:
                     dq.append([new_x, new_y])
-    
+
     cnt = 0
     for i in mp:
         cnt += i.count(0)
@@ -109,7 +109,7 @@ import copy
 
 N, M = map(int, stdin.readline().split())
 m = [list(map(int, stdin.readline().split())) for i in range(N)]
-v = [[False]*M for i in range(N)]
+v = [[False] * M for i in range(N)]
 
 virus = deque([])
 ans = 0
@@ -117,9 +117,8 @@ ans = 0
 for i in range(N):
     for j in range(M):
         if m[i][j] == 2:
-            virus.append([i,j])
+            virus.append([i, j])
 
 recursion(0)
 
 print(ans)
-

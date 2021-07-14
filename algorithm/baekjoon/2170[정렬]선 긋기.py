@@ -1,14 +1,15 @@
 import sys
+
 N = int(input())
 
 opt = [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)]
 opt = sorted(opt, key=lambda x: (x[0], -x[-1]))
 
-n = float('-inf')
+n = float("-inf")
 ans = 0
 
 for i in range(N):
-    s,e = opt[i]
+    s, e = opt[i]
     if n < s:
         n = s
     if n < e:
@@ -27,5 +28,5 @@ for i in range(N):
 #         ans += temp_e - temp_s
 #         temp_s, temp_e = s, e
 
-ans += e-s
+ans += e - s
 print(ans)

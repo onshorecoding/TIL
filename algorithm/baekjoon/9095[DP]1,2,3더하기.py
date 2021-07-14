@@ -16,12 +16,12 @@ lst = [int(input()) for _ in range(N)]
 
 
 def dinamic(n):
-    ans = [0,1,2,4]
+    ans = [0, 1, 2, 4]
     if n <= 3:
         return ans[n]
     else:
-        return dinamic(n-1) + dinamic(n-2) + dinamic(n-3)
+        return dinamic(n - 1) + dinamic(n - 2) + dinamic(n - 3)
+
 
 for i in lst:
     print(dinamic(i))
-

@@ -6,6 +6,6 @@ for case in test_case:
     n = int(case[0][0])
     text = ""
     for t in case[1]:
-        text += t*n 
+        text += t * n
 
     print(text)

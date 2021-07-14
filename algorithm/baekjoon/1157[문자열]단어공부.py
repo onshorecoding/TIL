@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def solution():
 
     w = input().upper()
@@ -12,5 +13,6 @@ def solution():
         return "?"
     else:
         return lst[0][0]
+
 
 print(solution())
