@@ -1,3 +1,4 @@
+# 브루트포스
 a, b = map(int, input().split())
 n = int(input())
 lst = [tuple(map(int, input().split())) for _ in range(n)]
